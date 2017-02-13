@@ -1,4 +1,4 @@
-﻿Build started 2017/2/13 下午 04:03:43.
+﻿Build started 2017/2/13 下午 04:05:37.
      1>Project "D:\Documents\GitHub\Visual Studio 2013\Camera\Camera\Camera.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt WebCam.cpp
@@ -6,10 +6,6 @@
      1>d:\documents\github\visualstudio2013\opencv 3.0.0\build\include\opencv2\core\mat.hpp(1965): warning C4819: The file contains a character that cannot be represented in the current code page (950). Save the file in Unicode format to prevent data loss
      1>d:\documents\github\visualstudio2013\opencv 3.0.0\build\include\opencv2\core\persistence.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (950). Save the file in Unicode format to prevent data loss
      1>d:\documents\github\visualstudio2013\opencv 3.0.0\build\include\opencv2\core\utility.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (950). Save the file in Unicode format to prevent data loss
-     1>d:\documents\github\visual studio 2013\camera\camera\webcam.cpp(12): warning C4005: 'MAX' : macro redefinition
-                 d:\documents\github\visualstudio2013\opencv 3.0.0\build\include\opencv2\core\cvdef.h(184) : see previous definition of 'MAX'
-     1>d:\documents\github\visual studio 2013\camera\camera\webcam.cpp(13): warning C4005: 'MIN' : macro redefinition
-                 d:\documents\github\visualstudio2013\opencv 3.0.0\build\include\opencv2\core\cvdef.h(180) : see previous definition of 'MIN'
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Documents\GitHub\Visual Studio 2013\Camera\Debug\Camera.exe" /INCREMENTAL /NOLOGO opencv_ts300.lib opencv_ts300d.lib opencv_world300.lib opencv_world300d.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\Documents\GitHub\Visual Studio 2013\Camera\Debug\Camera.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Documents\GitHub\Visual Studio 2013\Camera\Debug\Camera.lib" /MACHINE:X86 Debug\WebCam.obj
          Camera.vcxproj -> D:\Documents\GitHub\Visual Studio 2013\Camera\Debug\Camera.exe
@@ -17,4 +13,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:04.30
+Time Elapsed 00:00:03.50

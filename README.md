@@ -17,9 +17,11 @@ Microsoft Visual Studio 2013
 >>VC++ (include)
 >>>opencv\build\include;
 >>>opencv\build\include\opencv;
+
 >>VC++ (library)
 >>>opencv\build\x86\vc10\lib;
 >>Link (Input)
+
 >>>opencv_ts300.lib
 >>>opencv_ts300d.lib
 >>>opencv_world300.lib

@@ -1,4 +1,4 @@
-﻿Build started 2017/2/9 下午 01:16:36.
+﻿Build started 2017/2/13 下午 05:50:57.
      1>Project "D:\Documents\GitHub\Visual Studio 2013\Camera\Camera\Camera.vcxproj" on node 2 (Build target(s)).
      1>Link:
          Camera.vcxproj -> D:\Documents\GitHub\Visual Studio 2013\Camera\Release\Camera.exe
@@ -6,4 +6,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.79
+Time Elapsed 00:00:00.70

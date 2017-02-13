@@ -12,6 +12,7 @@ Microsoft Visual Studio 2013
 >環境變數
 >>OpenCV\build;
 >>OpenCV\build\x86\vc12\bin;
+
 >整合性開發平台
 >>VC++ (include)
 >>>opencv\build\include;

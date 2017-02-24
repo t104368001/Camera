@@ -13,17 +13,17 @@ int main() {
 //	MergeSort <int>::sort(ar, size);
 //	MergeSort <int>::print(ar, size);
 
-	//TreeND<float> intTree2D;
-	//Tree<int> intTree;
+	TreeND<float> floatTree2D;
+	TreeND<double> intTree2D;
 
-	double ar2[][2] = { { 40.2, 20 }, { 50, 1 } };
+	double ar2[][3] = { { 1040.51, 10 }, { 550, 10.0 }, { 100.01 } };
 
 	//intTree2D.insertNode(ar2[0]);
-	TreeND<double> intTree2D(sizeof ar2 / sizeof ar2[0]);
-
+	cout << "sizeof ar2 = " << sizeof ar2 << ", sizeof ar2[0] = " << sizeof ar2[0] << ", sizeof / sizeof ar2[0] = " << sizeof ar2 / sizeof ar2[0] << endl;
+	//TreeND<double> intTree2D(sizeof ar2 / sizeof ar2[0]);
 
 	for (int i = 0; i < sizeof ar2 / sizeof ar2[0]; i++){
-		intTree2D.insertNode(ar2[i]);
+		intTree2D.insertNode(ar2[i], sizeof ar2[i] / sizeof ar2[i][0]);
 	}
 
 	cout << "\nPreorder traversal\n";

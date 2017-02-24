@@ -1,4 +1,4 @@
-﻿Build started 2017/2/23 下午 10:38:34.
+﻿Build started 2017/2/24 下午 09:18:00.
      1>Project "D:\Documents\GitHub\Visual Studio 2013\Camera\Camera\Camera.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt WebCam.cpp
@@ -10,4 +10,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:02.55
+Time Elapsed 00:00:02.01

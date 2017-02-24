@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include <string>
+#include <iomanip>
 #include "Tree.h"
 
 using namespace std;
@@ -13,39 +14,28 @@ template <typename NODETYPE>
 class TreeND : public Tree<NODETYPE>{
 private:
 	TreeNodeND<NODETYPE> *rootPtr;
-	int dataCount;
+	int length;
 protected:
 	//utility functions
 	void insertNodeHelper(TreeNodeND <NODETYPE> **, NODETYPE *);
 	void preOrderHelper(TreeNodeND <NODETYPE> *) const;
 	void inOrderHelper(TreeNodeND <NODETYPE> *) const;
 	void postOrderHelper(TreeNodeND <NODETYPE> *) const;
+	void printfData(TreeNodeND <NODETYPE> *) const;
+	string deleteZero(NODETYPE) const;
 public:
-	TreeND();
+	TreeND() : rootPtr(0){};
 	TreeND(int);
-	void insertNode(NODETYPE *);
+	void insertNode(NODETYPE *, int);
 	void preOrderTraversal() const;
 	void inOrderTraversal() const;
 	void postOrderTraversal() const;
 };
 
-//Tree ND constructor
-template<typename NODETYPE>
-TreeND<NODETYPE>::TreeND(){
-	dataCount = 2;	//Default data array count 
-	rootPtr = 0;	//initally empty
-}
-
-//Tree ND constructor
-template<typename NODETYPE>
-TreeND<NODETYPE>::TreeND(int count){
-	dataCount = count;	//Default data array count 
-	rootPtr = 0;	//initally empty
-}
-
 //insert node in Tree
 template<typename NODETYPE>
-void TreeND<NODETYPE>::insertNode(NODETYPE *value){
+void TreeND<NODETYPE>::insertNode(NODETYPE *value, int length){
+	this->length = length;
 	insertNodeHelper(&rootPtr, value);
 }
 
@@ -80,16 +70,7 @@ void TreeND<NODETYPE>::preOrderTraversal() const{
 template <typename NODETYPE>
 void TreeND<NODETYPE>::preOrderHelper(TreeNodeND <NODETYPE> *ptr) const{
 	if (ptr != 0){
-		string str = "(";
-		inOrderHelper(ptr->leftPtr);	//traversal left subtree
-		for (int i = 0; i < this->dataCount; i++){
-			NODETYPE tmp = ptr->data[i];	//process node
-			str += to_string(tmp);
-			str += ",";
-		}
-		str.erase(str.length() - 1);
-		str += ")";
-		cout << str << endl;
+		printfData(ptr);				//process node
 		preOrderHelper(ptr->leftPtr);	//traversal left subtree
 		preOrderHelper(ptr->rightPtr);	//traversal right subtree
 	}//end if 
@@ -105,16 +86,8 @@ void TreeND<NODETYPE>::inOrderTraversal() const{
 template <typename NODETYPE>
 void TreeND<NODETYPE>::inOrderHelper(TreeNodeND <NODETYPE> *ptr) const{
 	if (ptr != 0){
-		string str = "(";
 		inOrderHelper(ptr->leftPtr);	//traversal left subtree
-		for (int i = 0; i < this->dataCount; i++){
-			NODETYPE tmp = ptr->data[i];	//process node
-			str += to_string(tmp);
-			str += ",";
-		}
-		str.erase(str.length() - 1);
-		str += ")";
-		cout << str << endl;
+		printfData(ptr);				//process node
 		inOrderHelper(ptr->rightPtr);	//traversal right subtree
 	}//end if 
 }//end function inOrderHelper
@@ -131,16 +104,43 @@ void TreeND<NODETYPE>::postOrderHelper(TreeNodeND <NODETYPE> *ptr) const{
 	if (ptr != 0){
 		postOrderHelper(ptr->leftPtr);	//traversal left subtree
 		postOrderHelper(ptr->rightPtr);	//traversal right subtree
+		printfData(ptr);				//process node
+	}//end if 
+}//end function postOrderHelper
+
+//utility function to print Data of Tree
+template <typename NODETYPE>
+void TreeND<NODETYPE>::printfData(TreeNodeND <NODETYPE> *ptr) const{
+	if (ptr->data != 0){
 		string str = "(";
-		inOrderHelper(ptr->leftPtr);	//traversal left subtree
-		for (int i = 0; i < this->*dataCount; i++){
-			NODETYPE tmp = ptr->data[i];	//process node
-			str += to_string(tmp);
+		for (int i = 0; i < this->length; i++){
+			str += deleteZero(ptr->data[i]);	//process node
 			str += ",";
 		}
-		str.erase(str.length() - 1);
+		str.erase(str.length() - 1);			//erase last ','
 		str += ")";
 		cout << str << endl;
 	}//end if 
-}//end function postOrderHelper
+}//end function printfData
+
+//utility function to adjustment flaot point of Data
+template <typename NODETYPE>
+string TreeND<NODETYPE>::deleteZero(NODETYPE data) const{
+	string str = to_string(data);
+	if (typeid(data) != typeid(int)){		//check out data type
+		char tmp[1024];
+		strncpy_s(tmp, str.c_str(), sizeof(tmp));	//copy data from String to char array
+		int i = str.size() - 1;				//get string length, except '\0' 
+		for (; i >= 0; i--){				//check flaot point 0
+			if (tmp[i] != '0'){
+				if (tmp[i] == '.')			//if tmp is integer no float point  
+					i--;
+				break;
+			}
+		}
+		str = str.substr(0, i + 1);			//string substring
+	}
+	return str;
+}//end function adjustment point
+
 #endif /*_TREEND_H_*/

@@ -37,7 +37,7 @@ TreeND   繼承自[Tree.h](Tree.h)
 -	新增Data 的印列與小數點的無效0的修正
 
 Node
--	using [TreeNodeND.h](TreeNodeND.h) 的 TreeNodeND
+-	using [TreeNode.h](TreeNode.h) 的 TreeNodeND
 
 ## Sort
 排序演算法

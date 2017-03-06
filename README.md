@@ -32,4 +32,4 @@ Microsoft Visual Studio 2013
 
 >>>opencv_world300d.lib
 
-參考自：[OpenCV下載與設定](http://monkeycoding.com?p=516)
+參考至：[OpenCV下載與設定](http://monkeycoding.com?p=516)

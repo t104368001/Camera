@@ -30,14 +30,26 @@ Node
 ## TreeND
 建置動態節點樹
 
-程式碼：[TreeND.h](TreeND.h)
+程式碼：[Tree.h](Tree.h)
 
-TreeND   繼承自[Tree.h](Tree.h)
--	複寫插入，搜尋 (用TreeNodeND，所以大致與Tree的方法一樣)
+TreeND   繼承自 Tree
+-	重載插入，搜尋 (用TreeNodeND，所以大致與Tree的方法一樣)
 -	新增Data 的印列與小數點的無效0的修正
 
 Node
 -	using [TreeNode.h](TreeNode.h) 的 TreeNodeND
+
+## KDTree
+KD-Tree
+
+程式碼：[Tree.h](Tree.h)
+
+KDTree   繼承自 TreeND
+-	重載插入
+-	新增 buildtree function
+-	提供XY軸排序依據的函式
+
+參考至：[大量 Point 資料結構 : k-Dimensional Tree)](http://www.csie.ntnu.edu.tw/~u91029/Position.html)
 
 ## Sort
 排序演算法

@@ -33,12 +33,17 @@ public:
 
 //Forward declaration of class KD Tree
 template <typename NODETYPE> class TreeND;
+template <typename NODETYPE> class KDTree;
 
 //TreeNode class-template definition
 template <typename NODETYPE>
 class TreeNodeND{
 	friend class TreeND<NODETYPE>;
+	friend class KDTree<NODETYPE>;
 private:
+	int stratum;	//data stratum
+	int length;		//data length
+	bool branch;	//store branch or leaf
 	TreeNodeND <NODETYPE> *leftPtr;	//pointer to left subtree
 	NODETYPE *data;					//tree ND node data
 	TreeNodeND <NODETYPE> *rightPtr;	//pointer to right subtree
@@ -49,7 +54,14 @@ public:
 	data is tree node data
 	rightPtr is pointer to right subtree
 	*/
-	TreeNodeND(NODETYPE *d) : leftPtr(0), data(d), rightPtr(0){
+	TreeNodeND(NODETYPE *d) : leftPtr(0), data(d), rightPtr(0), stratum(0){
+		//empty constructor
+	}
+	//Default data is branch
+	TreeNodeND(NODETYPE *d, int number, int length) : leftPtr(0), data(d), rightPtr(0), stratum(number), length(length), branch(true){
+		//empty constructor
+	}
+	TreeNodeND(NODETYPE *d, int number, int length, bool branch) : leftPtr(0), data(d), rightPtr(0), stratum(number), length(length), branch(branch){
 		//empty constructor
 	}
 	/*

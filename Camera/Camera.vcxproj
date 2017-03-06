@@ -82,7 +82,6 @@
   <ItemGroup>
     <ClInclude Include="lib\Sort.h" />
     <ClInclude Include="lib\Tree.h" />
-    <ClInclude Include="lib\TreeND.h" />
     <ClInclude Include="lib\TreeNode.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

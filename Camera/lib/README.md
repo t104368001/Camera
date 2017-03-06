@@ -49,7 +49,7 @@ KDTree   繼承自 TreeND
 -	新增 buildtree function
 -	提供XY軸排序依據的函式
 
-參考至：[大量 Point 資料結構 : k-Dimensional Tree)](http://www.csie.ntnu.edu.tw/~u91029/Position.html)
+參考至：[大量 Point 資料結構 : k-Dimensional Tree](http://www.csie.ntnu.edu.tw/~u91029/Position.html)
 
 ## Sort
 排序演算法
